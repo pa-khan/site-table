@@ -1,6 +1,7 @@
 /* Including styles files */
 /* Including fonts */
 @import url(../../libs/fancybox/dist/jquery.fancybox.css);
+@import url(../../libs/slick-carousel/slick/slick.css);
 @font-face {
   font-family: "";
   src: url("../../fonts/");
@@ -124,7 +125,7 @@
 
 body {
   font-size: 16px;
-  font-family: "Tahoma", sans-serif;
+  font-family: "Geometria", sans-serif;
   color: #000;
   background: white; }
 
@@ -176,7 +177,7 @@ input, textarea, button {
   .input__wrap {
     display: block;
     font-size: 16px;
-    font-family: "Tahoma", sans-serif;
+    font-family: "Geometria", sans-serif;
     background: white;
     width: 100%; }
 
@@ -185,7 +186,7 @@ input, textarea, button {
   .textarea__wrap {
     display: block;
     font-size: 16px;
-    font-family: "Tahoma", sans-serif;
+    font-family: "Geometria", sans-serif;
     background: white;
     width: 100%;
     resize: none; }
@@ -205,7 +206,7 @@ input, textarea, button {
       -ms-flex-pack: center;
           justify-content: center;
   font-size: 16px;
-  font-family: "Tahoma", sans-serif;
+  font-family: "Geometria", sans-serif;
   cursor: pointer;
   text-align: center;
   -webkit-transition: .3s;
