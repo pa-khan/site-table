@@ -19,7 +19,17 @@ $(document).ready(function($) {
 
 	var slider = $('.racks__slider');
 	slider.slick({
-		slidesToShow: 4
+		slidesToShow: 4,
+		responsive: [{
+			breakpoint: 992,
+			settings: {
+				slidesToShow: 2
+			}}, {
+			breakpoint: 767,
+			settings: {
+				slidesToShow: 1
+			} 
+		}]
 	})
 
 	$('.catalog__link span').click(function(event) {

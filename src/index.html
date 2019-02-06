@@ -81,10 +81,10 @@
 					<div class="racks__photos-item" style="background-image: url('upload/photos/4.png');"></div>
 				</div>
 				<div class="racks__slider">
-					<div class="racks__slider-item" style="background-image: url('upload/slider/1.png');"></div>
-					<div class="racks__slider-item" style="background-image: url('upload/slider/2.png');"></div>
-					<div class="racks__slider-item" style="background-image: url('upload/slider/3.png');"></div>
-					<div class="racks__slider-item" style="background-image: url('upload/slider/4.png');"></div>
+					<div class="racks__slider-item"><div class="racks__slider-img" style="background-image: url('upload/slider/1.png');"></div></div>
+					<div class="racks__slider-item"><div class="racks__slider-img" style="background-image: url('upload/slider/2.png');"></div></div>
+					<div class="racks__slider-item"><div class="racks__slider-img" style="background-image: url('upload/slider/3.png');"></div></div>
+					<div class="racks__slider-item"><div class="racks__slider-img" style="background-image: url('upload/slider/4.png');"></div></div>
 				</div>
 			</div>
 		</div>
@@ -460,13 +460,6 @@
 			        .add(myPlacemarkWithContent);
 
 			    myMap.behaviors.disable('scrollZoom');
-			    $(window).on('load resize', function() {
-			    	if ($(window).width() < 767) {
-							myMap.setCenter([55.737, 37.559712]);
-						} else{
-							myMap.setCenter([55.742975, 37.559712]);
-						}
-			    });
 					
 			});
 			</script>
