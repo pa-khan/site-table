@@ -7,7 +7,7 @@
 
 
 /* Global settings */
-$font-size: 16px
+$font-size: 18px
 $font-family-1: 'Geometria', sans-serif
 $color-1: #000
 
@@ -57,16 +57,48 @@ input
 input, textarea, button
  outline: none
 
+u
+	text-decoration: none
+
+
+
 /* Form elements */
 .input
 	position: relative
 	&__wrap
 		display: block
-		font-size: $font-size
+		font-size: 16px
 		font-family: $font-family-1
 		background: white
 		width: 100%
-
+		background-color: #f6f6f6
+		height: 58px
+		border-radius: 5px
+		padding-left: 20px
+		padding-right: 20px
+		border: 2px solid #f6f6f6
+		padding-top: 18px
+		font-weight: 700
+		&::placeholder
+			opacity: 1
+			color: $color-1
+	&__title
+		font-size: 16px
+		position: absolute
+		top: 18px
+		left: 20px
+		right: 0px
+		transition: .3s
+	&_focus, &_filled
+		.input
+			&__title
+				font-size: 14px
+				transform: translateY(-10px)
+			
+	&_error
+		.input	
+			&__wrap
+				border-color: #f00
 
 .textarea
 	position: relative
@@ -77,6 +109,90 @@ input, textarea, button
 		background: white
 		width: 100%
 		resize: none
+
+.checkbox
+	input
+		display: none
+		&:checked + label
+			&:after
+				opacity: 1
+				transform: scale(1)
+	label
+		font-size: 14px
+		line-height: 16px
+		padding-left: 27px
+		display: inline-block
+		position: relative
+		cursor: pointer
+		&:before, &:after
+			content: ''
+			top: 0
+			left: 0
+			position: absolute
+			transition: .3s
+		&:before
+			border: 2px solid #ff6b17
+			width: 17px
+			height: 17px
+		&:after
+			width: 9px
+			height: 9px
+			background-color: #ff6b17
+			margin: 4px
+			opacity: 0
+			transform: scale(0)
+		a
+			color: #0266e0
+			border-color: #0266e0
+			&:hover
+				border-color: transparent
+
+.jq-selectbox
+	position: relative
+	select
+		display: none
+	&.opened
+		.jq-selectbox
+			&__trigger
+				transform: rotate(180deg)
+	&__select
+		background-color: #f6f6f6
+		height: 58px
+		border-radius: 5px
+		padding-left: 20px
+		padding-right: 20px
+		border: 2px solid #f6f6f6
+		padding-top: 18px
+		font-weight: 700
+		cursor: pointer
+		&-text
+			position: relative
+			top: -2px
+	&__trigger
+		position: absolute
+		top: 50%
+		right: 16px
+		width: 22px
+		height: 12px
+		margin-top: -6px
+		transition: .3s
+		background: url('../../img/chevron-down.png') no-repeat center
+	&__dropdown
+		z-index: 1
+		position: absolute
+		top: 60px !important
+		left: 0 !important
+		right: 0 !important
+		width: 100% !important
+		padding: 12px 20px
+		border-radius: 5px
+		background-color: #f6f6f6
+		li
+			width: 100%
+			cursor: pointer
+			margin-bottom: 3px
+			&:last-of-type
+				margin-bottom: 0
 
 .btn
 	position: relative
@@ -89,7 +205,22 @@ input, textarea, button
 	text-align: center
 	transition: .3s
 	background-color: transparent
-
+	&_normal
+		height: 55px
+		padding-left: 35px
+		padding-right: 35px
+		border-radius: 50px
+	&_orange
+		color: #fff
+		background-color: #ff6b17
+		box-shadow: 4px 13px 28px 2px rgba(255, 107, 23, 0.33)
+		&:hover
+			box-shadow: none
+	&_border
+		border: 1px solid #ff6b17
+		&:hover
+			color: #fff
+			background-color: #ff6b17
 .input input, .textarea textarea
 	transition: .3s
 
@@ -115,9 +246,425 @@ input, .btn, .slick-slide, textarea
 .main-wrap
 	// overflow-x: hidden
 
+.title
+	font-size: 50px
+	line-height: 45px
+	font-weight: 300
+
+.subtitle
+	font-size: 30px
+	font-weight: 300
 
 
 
+.panel
+	position: fixed
+	top: 0
+	left: 0
+	right: 0
+	box-shadow: 0 0 37px 1px rgba(0, 0, 0, 0.17)
+	background-color: #fff
+	z-index: 10
+	padding-top: 22px
+	padding-bottom: 28px
+	transition: .3s
+	&_scroll
+		padding-top: 14px
+		padding-bottom: 20px
+	&__logo
+		margin-right: auto
+		width: 166px
+	&__email
+		width: 185px
+		font-size: 18px
+		margin-right: 55px
+		a
+			border-color: $color-1
+			&:hover
+				border-color: transparent
+	&__contacts
+		text-align: right
+		width: 218px
+	&__phone
+		font-size: 22px
+		a
+			color: #ff6b17
+	&__time
+		font-size: 16px
+	&__btn
+		margin-left: 17px
+
+
+.header
+	padding-top: 165px
+	padding-bottom: 45px
+	&__content
+		padding-top: 110px
+		width: 540px
+	&__title
+		font-size: 55px
+		line-height: 60px
+		font-weight: 500
+		margin-bottom: 10px
+	&__desc
+		font-size: 35px
+		font-weight: 300
+		margin-bottom: 35px
+	&__img
+		margin-right: -90px
+		margin-left: auto
+
+	&__btn
+		max-width: 175px
+
+
+.advantages
+	background-color: #f6f6f6
+	&__list
+		padding: 40px 0
+		justify-content: space-between
+	&__item
+		display: flex
+		flex-wrap: wrap
+	&__icon
+		margin-right: 15px
+	&__text
+		font-size: 18px
+		line-height: 20px
+
+
+
+.racks
+	padding-top: 55px
+	&__title
+		text-align: center
+		margin-bottom: 30px
+	&__photos, &__slider
+		margin-left: -15px
+		margin-right: -15px
+		&-item
+			background-position: center
+			background-repeat: no-repeat
+			background-size: cover
+	&__photos
+		margin-bottom: 30px
+		&-item
+			width: calc(25% - 30px)
+			height: 256px
+			margin-left: 15px
+			margin-right: 15px
+
+	&__slider
+		.slick-slide
+			padding-left: 15px
+			padding-right: 15px
+		&-item
+			height: 175px
+
+
+
+.catalog
+	padding-top: 50px
+	padding-bottom: 25px
+	&__title, &__desc
+		text-align: center
+	&__desc
+		margin-bottom: 30px
+	&__list
+		margin-left: -15px
+		margin-right: -15px
+		justify-content: center
+	&__item
+		display: flex
+		flex-direction: column
+		justify-content: space-between
+		width: calc(33.333% - 30px)
+		margin-left: 15px
+		margin-right: 15px
+		margin-bottom: 35px
+	&__img-wrap
+		position: relative
+		margin-bottom: 15px
+		img
+			margin-left: auto
+			margin-right: auto
+	&__params
+		background-color: rgba(255,255,255,.9)
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		display: flex
+		flex-direction: column
+		justify-content: center
+		opacity: 0
+		transition: .5s
+		&_show
+			opacity: 1
+		p
+			font-size: 23px
+			line-height: 25px
+			margin-bottom: 10px
+		ul
+			li
+				font-size: 18px
+				line-height: 25px
+				width: 100%
+	&__name, &__link, &__price
+		text-align: center
+	&__name
+		line-height: 30px
+		width: 300px
+		margin-left: auto
+		margin-right: auto
+		margin-bottom: 15px
+	&__link
+		font-size: 15px
+		margin-bottom: 14px
+		span
+			transition: .3s
+			border-bottom: 1px solid $color-1
+			cursor: pointer
+			&:hover
+				border-color: transparent
+	&__price
+		line-height: 25px
+
+
+.dops
+	padding-top: 55px
+	background: url('../../img/iphones.png') no-repeat center bottom, #f6f6f6
+	&__title
+		text-align: center
+		margin-bottom: 55px
+	&__line
+		width: 50%
+		margin-bottom: 115px
+		&:nth-of-type(1)
+			width: 100%
+			margin-bottom: 75px
+			.dops
+				&__item
+					margin-left: auto
+					margin-right: auto
+		&:nth-of-type(odd)
+			.dops
+				&__item
+					margin-left: auto
+		
+	&__item
+		display: flex
+		width: 305px
+
+	&__icon
+		width: 48px
+		img
+			position: relative
+
+	&__text
+		font-size: 17px
+		line-height: 20px
+		width: calc(100% - 48px)
+		padding-left: 15px
+
+
+.icon-tv
+	top: -5px
+
+.icon-doc-horizon
+	top: 4px
+
+.icon-bell
+	top: -4px
+
+
+
+
+.delivery
+	color: #fff
+	background: url('../../img/mounts.png') no-repeat center
+	background-size: cover
+	padding-top: 60px
+	padding-bottom: 65px
+	&__title, &__desc
+		margin-left: auto
+		margin-right: auto
+		text-align: center
+		font-weight: 300
+	&__title
+		max-width: 750px
+		margin-bottom: 17px
+
+	&__desc
+		max-width: 540px
+		line-height: 30px
+		margin-bottom: 42px
+	
+	&__img
+		img
+			margin-left: auto
+			margin-right: auto
+
+
+.map
+	padding-top: 65px
+	padding-bottom: 65px
+	background-color: #f6f6f6
+	&__arrea
+		width: calc(100% - 420px)
+
+	&__content
+		width: 420px
+		padding-top: 20px
+		padding-left: 55px
+
+	&__title
+		margin-bottom: 34px
+	&__contacts
+		margin-bottom: 24px
+	&__text
+		color: #666666
+		font-size: 17px
+		line-height: 20px
+		margin-bottom: 25px
+		p
+			margin-bottom: 20px
+			&:last-of-type
+				margin-bottom: 0
+	&__btn
+		max-width: 240px
+
+
+
+.contacts
+	line-height: 30px
+	&__title
+		color: #666666
+
+
+.footer
+	padding-top: 34px
+	padding-bottom: 50px
+	&__logo
+		width: 166px
+	&__policy
+		font-size: 14px
+		margin-left: auto
+		margin-right: auto
+		width: 315px
+		text-align: center
+		a
+			color: #666666
+			border-color: #666666
+			&:hover
+				border-color: transparent
+	&__email
+		font-size: 18px
+		width: 185px
+		text-align: center
+		margin-right: 55px
+		a
+			border-color: $color-1
+			&:hover
+				border-color: transparent
+
+	&__contacts
+		text-align: right
+		width: 218px
+
+	&__phone
+		font-size: 22px
+		a
+			color: #ff6b17
+	&__time
+		font-size: 16px
+		
+
+.popup
+	display: none
+	font-family: $font-family-1
+	cursor: default !important
+	border-radius: 6px
+	&_small
+		width: 395px
+		padding: 45px 15px 50px
+	&_normal
+		width: 505px
+		padding: 45px 75px 50px
+	&_thanks
+		padding-top: 90px	
+		padding-bottom: 50px
+		.popup
+			&__title
+				margin-bottom: 13px
+				&:before
+					content: ''
+					position: absolute
+					top: -35px
+					left: 50%
+					transform: translateX(-50%)
+					width: 24px
+					height: 16px
+					background: url('../../img/checked.png')
+
+	&__close
+		width: 22px
+		height: 22px
+		position: absolute
+		top: 24px
+		right: 20px
+		cursor: pointer
+		transition: .3s
+		background: url('../../img/x.png') no-repeat center
+		&:hover
+			transform: scale(.8)
+	&__title
+		position: relative
+		text-align: center
+		line-height: 30px
+		margin-bottom: 20px
+	&__text
+		font-size: 16px
+		line-height: 20px
+		text-align: center
+		margin-bottom: 25px
+
+	&__text
+		font-size: 16px
+
+	.fancybox-close-small
+		display: none
+
+
+.form
+	display: flex
+	flex-wrap: wrap
+	margin-left: -7px
+	margin-right: -7px
+	&__select, &__input, &__policy
+		width: calc(100% - 14px)
+		margin-left: 7px
+		margin-right: 7px
+	&__select
+		margin-bottom: 12px
+	&__input
+		margin-bottom: 12px
+		&_small
+			width: calc(50% - 14px)
+			margin-left: 7px
+			margin-right: 7px
+	&__policy
+		margin-top: 25px
+		margin-bottom: 25px
+	&__btn
+		max-width: 270px
+		margin-left: auto
+		margin-right: auto
+
+.color-orange
+	color: #ff6b17
+		
 
 .hidden-lg
 	display: none

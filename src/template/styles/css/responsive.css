@@ -1,6 +1,24 @@
 @media screen and (max-width: 1199px) {
   .case {
     width: 950px; }
+  .panel__email {
+    margin-left: auto;
+    margin-right: auto; }
+  .header {
+    padding-top: 135px; }
+    .header__content {
+      width: 430px;
+      padding-top: 90px; }
+    .header__title {
+      font-size: 44px;
+      line-height: 50px; }
+    .header__desc {
+      font-size: 24px;
+      margin-bottom: 25px; }
+    .header__img {
+      width: -webkit-calc(100% - 430px);
+      width: calc(100% - 430px);
+      margin-right: 0; }
   .hidden-lg {
     display: block; }
   .hidden-md {
@@ -9,6 +27,39 @@
 @media screen and (max-width: 992px) {
   .case {
     width: 750px; }
+  .panel__btn {
+    display: none; }
+  .header__content {
+    width: 100%;
+    -webkit-box-ordinal-group: 3;
+    -webkit-order: 2;
+        -ms-flex-order: 2;
+            order: 2;
+    padding-top: 20px; }
+  .header__img {
+    max-width: 420px;
+    width: 100%;
+    -webkit-box-ordinal-group: 2;
+    -webkit-order: 1;
+        -ms-flex-order: 1;
+            order: 1;
+    margin-right: auto; }
+    .header__img img {
+      margin-left: auto;
+      margin-right: auto; }
+  .header__title {
+    font-size: 36px;
+    line-height: 40px; }
+  .header__title, .header__desc {
+    text-align: center;
+    max-width: 420px;
+    margin-left: auto;
+    margin-right: auto; }
+  .header__desc {
+    margin-bottom: 20px; }
+  .header__btn {
+    margin-left: auto;
+    margin-right: auto; }
   .hidden-md {
     display: block; }
   .hidden-sm {
@@ -17,6 +68,56 @@
 @media screen and (max-width: 767px) {
   .case {
     width: 100%; }
+  .panel {
+    padding-top: 15px !important;
+    padding-bottom: 15px !important;
+    text-align: center;
+    position: relative; }
+    .panel__wrap {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: column;
+          -ms-flex-direction: column;
+              flex-direction: column; }
+    .panel__logo {
+      margin-left: auto;
+      margin-bottom: 8px; }
+    .panel__email {
+      font-size: 14px;
+      margin-bottom: 8px; }
+    .panel__contacts {
+      text-align: center; }
+    .panel__phone {
+      font-size: 18px;
+      margin-bottom: 4px; }
+    .panel__time {
+      font-size: 14px;
+      margin-bottom: 10px; }
+    .panel__btn {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      margin-left: 0;
+      width: 280px; }
+  .header {
+    padding-top: 35px; }
+    .header__title, .header__desc {
+      font-size: 28px;
+      line-height: 30px;
+      max-width: 320px; }
+    .header__title {
+      margin-bottom: 0; }
+  .btn_normal {
+    font-size: 18px;
+    height: 50px;
+    padding-left: 0;
+    padding-right: 0; }
+  .title {
+    font-size: 26px;
+    line-height: 20px; }
+  .subtitle {
+    font-size: 18px; }
   .hidden-sm {
     display: block; }
   .hidden-xs {
